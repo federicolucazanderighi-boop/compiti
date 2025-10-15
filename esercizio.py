@@ -17,5 +17,7 @@ if len (n) / 2 == 3.5:
   a = n[0:3]
   b = n[4:7]
   print ("Il tuo nome è :",a + b)
-
+k = 10  
+if len (n)>= k:
+  print ("Scegli un altro nome con inferiori lettere")
 
