@@ -19,5 +19,4 @@ if len (n) / 2 == 3.5:
   print ("Il tuo nome è :",a + b)
 k = 10  
 if len (n)>= k:
-  print ("Scegli un altro nome con inferiori lettere")
-
+  print ("Scegli un altro nome con lettere inferiori a 10")
