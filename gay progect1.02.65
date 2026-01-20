@@ -32,4 +32,17 @@ else:
     c3 = s1[n2:]
     c = c1+c2+c3
 print(c)
+numero1=int(input("Inserisci il numero più grande"))
+numero2=int(input("Inserisci il numero più piccolo"))
+numero3= 0
+while numero2 != numero3:
+ numero3=numero1-numero2
+ if numero3 >numero2:
+   numero1=numero3
+   numero3=numero1-numero2
+ else:
+   numero1=numero2
+   numero2=numero3
+   numero3=numero1-numero2
+print(numero3)
 
