@@ -1,0 +1,13 @@
+numero1=int(input("Inserisci il numero più grande"))
+numero2=int(input("Inserisci il numero più piccolo"))
+numero3= 0
+while numero2 != numero3:
+ numero3=numero1-numero2
+ if numero3 >numero2:
+   numero1=numero3
+   numero3=numero1-numero2
+ else:
+   numero1=numero2
+   numero2=numero3
+   numero3=numero1-numero2
+print(numero3)
