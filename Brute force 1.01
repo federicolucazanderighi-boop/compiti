@@ -1,0 +1,43 @@
+import random
+import time
+
+def simulazione_cracking_pin_6_cifre():
+    print("--- SIMULAZIONE BRUTE FORCE (6 CIFRE) ---")
+    
+    # 1. Generiamo un PIN a 6 cifre (da 000000 a 999999)
+    # Nota: random.randint include gli estremi, quindi fino a 999999
+    pin_segreto = f"{random.randint(0, 999999):06d}" 
+    print(f"[SISTEMA] PIN segreto a 6 cifre generato: ******")
+    print("------------------------------------------------")
+
+    input("Premi INVIO per avviare il calcolo...")
+    inizio = time.time()
+    tentativi = 0
+    trovato = False
+
+    # 2. Il ciclo ora deve arrivare fino a 1.000.000 (un milione)
+    # range(1000000) va da 0 a 999999
+    for i in range(1000000):
+        # Formattiamo con 6 zeri (:06d)
+        tentativo_corrente = f"{i:06d}"
+        tentativi += 1
+        
+        if tentativo_corrente == pin_segreto:
+            fine = time.time()
+            tempo_totale = fine - inizio
+            print(f"\n[SUCCESSO] PIN TROVATO: {tentativo_corrente}")
+            print(f"Tentativi totali: {tentativi}")
+            print(f"Tempo impiegato: {tempo_totale:.4f} secondi")
+            trovato = True
+            break
+        
+        # Stampiamo un aggiornamento ogni 50.000 tentativi per non intasare lo schermo
+        # (Con 4 cifre lo facevamo ogni 1000, qui serve intervallo più ampio)
+        if i % 50000 == 0:
+            print(f"Analisi in corso... testato fino a {tentativo_corrente}")
+
+    if not trovato:
+        print("Errore imprevisto.")
+
+if __name__ == "__main__":
+    simulazione_cracking_pin_6_cifre()
