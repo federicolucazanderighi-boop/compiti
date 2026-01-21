@@ -1,0 +1,46 @@
+import random
+import time
+
+def simulazione_cracking_pin():
+    print("--- SIMULAZIONE DI FORZA BRUTA (BRUTE FORCE) ---")
+    
+    # 1. Il "Sistema" sceglie un PIN segreto casuale a 4 cifre
+    # (Nella realtà, questo è salvato nel chip di sicurezza del telefono)
+    pin_segreto = f"{random.randint(0, 9999):04d}" 
+    print(f"[SISTEMA] Il PIN segreto generato in memoria è: **** (nascosto)")
+    print("------------------------------------------------")
+
+    # 2. Inizio dell'attacco
+    input("Premi INVIO per avviare il programma di ricerca...")
+    inizio = time.time()
+    tentativi = 0
+    trovato = False
+
+    # 3. Algoritmo di ricerca (Prova da 0000 a 9999)
+    for i in range(10000):
+        # Formatta il numero corrente (es: 5 diventa "0005")
+        tentativo_corrente = f"{i:04d}"
+        tentativi += 1
+        
+        # Simuliamo un micro-ritardo del processore (molto veloce)
+        # Se fosse un telefono vero, qui ci sarebbe un blocco di 30 secondi ogni 5 tentativi!
+        
+        if tentativo_corrente == pin_segreto:
+            fine = time.time()
+            tempo_totale = fine - inizio
+            print(f"\n[SUCCESSO] PIN TROVATO: {tentativo_corrente}")
+            print(f"Numero di tentativi effettuati: {tentativi}")
+            print(f"Tempo impiegato: {tempo_totale:.4f} secondi")
+            trovato = True
+            break
+        
+        # Per non intasare lo schermo, stampiamo solo ogni 1000 tentativi
+        if i % 1000 == 0:
+            print(f"Sto provando... (siamo a {tentativo_corrente})")
+
+    if not trovato:
+        print("Errore: PIN non trovato (impossibile con questo algoritmo).")
+
+# Esegui il programma
+if __name__ == "__main__":
+    simulazione_cracking_pin()
