@@ -1,0 +1,16 @@
+nume1=int(input("Quanti numeri ha il polinomio più grande?:"))
+nume2=int(input("Quanti numeri ha il polinomio più piccolo?:"))
+lista1=[]
+lista2=[]
+lista3=[]
+j=0
+i=1
+h=2
+for i in range (nume1):
+   lista1.append(int(input("Inserisci un numero del primo polinomio")))
+   lista2.append(int(input("Inserisci un numero del secondo polinomio")))
+while j<(nume1):
+   lista3.append(lista1[0]*lista2[j]
+j+=1
+for i in range (nume1):
+  lista3.append((lista1[j] * lista2[i])+ (lista1[i] *lista2[h]))
