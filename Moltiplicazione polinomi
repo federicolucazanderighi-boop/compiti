@@ -14,3 +14,4 @@ while j<(nume1):
 j+=1
 for i in range (nume1):
   lista3.append((lista1[j] * lista2[i])+ (lista1[i] *lista2[h]))
+print(liste3)
