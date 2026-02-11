@@ -1,4 +1,6 @@
 #massimo
+
+
 a=int(input("Quanti numeri vuoi inserire:"))
 b=int(input("inserisci un numero: "))
 c=1
