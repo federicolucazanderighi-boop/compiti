@@ -1,0 +1,16 @@
+#trova_posizione
+def trova_posizione(lista, numero, indice=0):
+
+    if indice >= len(lista):
+        return -1  
+
+    if lista[indice] == numero:
+        return indice  
+    return trova_posizione(lista, numero, indice + 1)   
+lista_numeri = [10, 20, 30, 40, 50]
+numero_da_trovare = 30
+posizione = trova_posizione(lista_numeri, numero_da_trovare)
+if posizione != -1:
+    print(f"Il numero {numero_da_trovare} è presente nella lista alla posizione {posizione+1}.")
+else:
+    print(f"Il numero {numero_da_trovare} non è presente nella lista.")
